@@ -112,46 +112,48 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const allMedia = [...doramasData, ...moviesData, ...seriesData];
   const [allChannels, setAllChannels] = useState<Channel[]>(channelsData);
 
+  // Load and sync channels (from catalogo.json or custom M3U/Xtream provider)
   useEffect(() => {
-    fetch('/data/catalogo.json')
-      .then((res) => res.json())
-      .then((data) => {
+    const loadChannels = async () => {
+      try {
+        const res = await fetch('/data/catalogo.json');
+        const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
-          const mapped: Channel[] = data.map((c: any) => {
-            // Check if there is an existing enriched channel in channelsData
-            const existing = channelsData.find((ch) => ch.id === c.id || ch.name.toLowerCase() === c.name.toLowerCase());
-            return {
-              id: c.id,
-              name: c.name,
-              slug: c.id,
-              category: c.category || 'Variedades',
-              logoUrl: c.logo || existing?.logoUrl || 'https://via.placeholder.com/100x100?text=' + encodeURIComponent(c.name),
-              currentShow: existing?.currentShow || {
-                title: 'Transmissão Ao Vivo HD',
-                description: 'Assista a programação em tempo real no Sirius TV',
-                startTime: '13:00',
-                endTime: '15:00',
-                progressPercent: 45,
-              },
-              nextShow: existing?.nextShow || {
-                title: 'Programação a Seguir',
-                startTime: '15:00',
-              },
-              sources: (c.sources && c.sources.length > 0)
-                ? c.sources.map((src: string, idx: number) => ({
-                    name: `Servidor ${idx + 1}`,
-                    url: src,
-                    type: 'hls' as const,
-                  }))
-                : existing?.sources || [],
-            };
-          });
+          const mapped: Channel[] = data.map((c: any) => ({
+            id: c.id,
+            name: c.name,
+            slug: c.slug || c.id,
+            category: c.category || 'Variedades',
+            logoUrl: c.logoUrl || c.logo || `https://via.placeholder.com/100x100?text=${encodeURIComponent(c.name)}`,
+            thumbUrl: c.thumbUrl,
+            schedule: c.schedule || [],
+            currentShow: c.currentShow || {
+              title: 'Programação Ao Vivo',
+              description: 'Assista a programação em tempo real no Sirius TV',
+              startTime: '19:00',
+              endTime: '21:30',
+              progressPercent: 45,
+            },
+            nextShow: c.nextShow || {
+              title: 'Programação a Seguir',
+              startTime: '21:30',
+            },
+            sources: Array.isArray(c.sources)
+              ? c.sources.map((src: any, idx: number) =>
+                  typeof src === 'string'
+                    ? { name: `Servidor ${idx + 1}`, url: src, type: 'hls' as const }
+                    : src
+                )
+              : [],
+          }));
           setAllChannels(mapped);
         }
-      })
-      .catch((err) => {
-        console.warn('Carregamento de canais:', err);
-      });
+      } catch (err) {
+        console.warn('Erro ao carregar catálogo de canais:', err);
+      }
+    };
+
+    loadChannels();
   }, []);
 
   // Shortcut for search Ctrl+K or /

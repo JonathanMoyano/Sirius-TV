@@ -26,7 +26,6 @@ export function requiresProxy(url: string): boolean {
     'dadinhodetapioca.fun',
     'cdn13embed.xyz',
     'faz-o-eli.online',
-    'multtv.tv.br'
   ];
   return noCorsHosts.some((host) => url.includes(host));
 }
@@ -54,3 +53,4 @@ export function resolvePlayableUrl(rawUrl: string, forceProxy = false): string {
   }
   return rawUrl;
 }
+

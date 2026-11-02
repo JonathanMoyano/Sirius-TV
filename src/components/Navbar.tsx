@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useApp, NavTab } from '../context/AppContext';
-import { Search, Tv, Wifi } from 'lucide-react';
+import { Search, Tv, Server } from 'lucide-react';
+import { ProviderModal } from './ProviderModal';
 
 export const Navbar: React.FC = () => {
   const { currentTab, setCurrentTab, favorites, setIsSearchOpen } = useApp();
   const [timeStr, setTimeStr] = useState('');
   const [dateStr, setDateStr] = useState('');
+  const [isProviderModalOpen, setIsProviderModalOpen] = useState(false);
 
   // Real-time Brazilian clock (UniTV / Smart TV style)
   useEffect(() => {
@@ -113,6 +115,16 @@ export const Navbar: React.FC = () => {
           <span className="text-slate-300">1080P FHD</span>
         </div>
 
+        {/* Provider & Lists Button */}
+        <button
+          onClick={() => setIsProviderModalOpen(true)}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 hover:text-white transition-all text-xs font-bold cursor-pointer"
+          title="Configurar Provedor Xtream Codes ou Lista M3U"
+        >
+          <Server className="w-3.5 h-3.5" />
+          <span className="hidden md:inline">Provedor</span>
+        </button>
+
         {/* Search Button */}
         <button
           onClick={() => setIsSearchOpen(true)}
@@ -136,6 +148,12 @@ export const Navbar: React.FC = () => {
           </span>
         </div>
       </div>
+
+      {/* Provider & Xtream Modal */}
+      <ProviderModal
+        isOpen={isProviderModalOpen}
+        onClose={() => setIsProviderModalOpen(false)}
+      />
     </header>
   );
 };

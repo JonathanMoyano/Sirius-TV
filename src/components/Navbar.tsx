@@ -1,181 +1,141 @@
 import React, { useState, useEffect } from 'react';
 import { useApp, NavTab } from '../context/AppContext';
-import {
-  Tv,
-  Film,
-  Sparkles,
-  Heart,
-  Search,
-  Menu,
-  X,
-  Radio,
-  Clapperboard,
-} from 'lucide-react';
+import { Search, Tv, Wifi } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { currentTab, setCurrentTab, favorites, setIsSearchOpen } = useApp();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [timeStr, setTimeStr] = useState('');
+  const [dateStr, setDateStr] = useState('');
 
+  // Real-time Brazilian clock (UniTV / Smart TV style)
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+    const updateClock = () => {
+      const now = new Date();
+      setTimeStr(
+        now.toLocaleTimeString('pt-BR', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        })
+      );
+      setDateStr(
+        now.toLocaleDateString('pt-BR', {
+          weekday: 'short',
+          day: '2-digit',
+          month: 'short',
+        }).replace('.', '')
+      );
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    updateClock();
+    const timer = setInterval(updateClock, 1000);
+    return () => clearInterval(timer);
   }, []);
 
-  const navItems: { id: NavTab; label: string; icon: React.ReactNode; badge?: string }[] = [
-    { id: 'channels', label: 'TV Ao Vivo', icon: <Radio className="w-4 h-4 text-rose-500 animate-pulse" />, badge: 'AO VIVO' },
-    { id: 'filmes' as any, label: 'Filmes', icon: <Film className="w-4 h-4 text-cyan-400" /> },
-    { id: 'series', label: 'Séries', icon: <Clapperboard className="w-4 h-4 text-indigo-400" /> },
-    { id: 'doramas', label: 'Doramas', icon: <Sparkles className="w-4 h-4 text-amber-400" />, badge: 'TOP' },
+  const navTabs: { id: NavTab; label: string; count?: number }[] = [
+    { id: 'channels', label: 'AO VIVO' },
+    { id: 'filmes' as any, label: 'FILMES' },
+    { id: 'series', label: 'SÉRIES' },
+    { id: 'doramas', label: 'DORAMAS' },
     {
       id: 'favorites',
-      label: 'Minha Lista',
-      icon: <Heart className="w-4 h-4 text-pink-400" />,
-      badge: favorites.length > 0 ? `${favorites.length}` : undefined,
+      label: 'MINHA LISTA',
+      count: favorites.length > 0 ? favorites.length : undefined,
     },
   ];
 
-  const handleNavClick = (id: NavTab) => {
-    setCurrentTab(id);
-    setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#070913]/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-3'
-          : 'bg-gradient-to-b from-[#070913] via-[#070913]/80 to-transparent py-4'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <div
-          onClick={() => handleNavClick('channels')}
-          className="flex items-center gap-2.5 cursor-pointer group select-none"
-        >
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-purple-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
-            <div className="w-full h-full bg-[#070913] rounded-[10px] flex items-center justify-center">
-              <Tv className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
-            </div>
-            {/* Sirius Star Accent Dot */}
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-cyan-400 rounded-full animate-ping" />
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-cyan-300 rounded-full" />
-          </div>
-
-          <div className="flex flex-col">
-            <span className="text-xl sm:text-2xl font-black tracking-wider text-white flex items-center gap-1 font-mono">
-              SIRIUS <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">TV</span>
-            </span>
-            <span className="text-[9px] uppercase tracking-widest text-cyan-400/80 font-semibold -mt-1 hidden sm:block">
-              O Universo do Streaming
-            </span>
-          </div>
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-[#080b14]/95 backdrop-blur-2xl border-b border-white/[0.07] px-4 sm:px-8 flex items-center justify-between select-none">
+      {/* LEFT: Sleek Brand Logo */}
+      <div
+        onClick={() => setCurrentTab('channels')}
+        className="flex items-center gap-3 cursor-pointer group py-1"
+      >
+        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-purple-600/20 border border-cyan-500/40 flex items-center justify-center shadow-lg shadow-cyan-500/10 group-hover:border-cyan-400 transition-all">
+          <Tv className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
         </div>
 
-        {/* Desktop Nav Items */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {navItems.map((item) => {
-            const active = currentTab === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 group ${
-                  active
-                    ? 'text-white bg-slate-800/90 shadow-inner shadow-cyan-500/10 border border-slate-700/80'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
-                }`}
-              >
-                {item.icon}
-                <span>{item.label}</span>
-                {item.badge && (
-                  <span
-                    className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
-                      item.badge === 'AO VIVO'
-                        ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-                        : item.badge === 'TOP'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-pink-500/20 text-pink-300 border border-pink-500/30'
-                    }`}
-                  >
-                    {item.badge}
-                  </span>
-                )}
-                {active && (
-                  <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-sm shadow-cyan-400" />
-                )}
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* Right Actions: Search + Mobile Menu Button */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setIsSearchOpen(true)}
-            className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-white text-xs sm:text-sm transition-all duration-200 shadow-sm"
-            title="Buscar canais, filmes, séries e doramas (Ctrl+K)"
-          >
-            <Search className="w-4 h-4 text-cyan-400" />
-            <span className="hidden sm:inline">Buscar...</span>
-            <kbd className="hidden md:inline-block px-1.5 py-0.5 text-[10px] bg-slate-800 text-slate-400 border border-slate-700 rounded font-mono">
-              Ctrl K
-            </kbd>
-          </button>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
-            aria-label="Abrir Menu"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+        <div className="flex flex-col">
+          <div className="flex items-center gap-1.5 leading-none">
+            <span className="text-lg font-black tracking-wider text-white">SIRIUS</span>
+            <span className="text-lg font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              TV
+            </span>
+          </div>
+          <span className="text-[9px] font-mono tracking-widest text-slate-400 uppercase mt-0.5">
+            IPTV ULTRA • 4K
+          </span>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0a0d1d]/98 border-b border-slate-800 px-4 py-4 space-y-1.5 backdrop-blur-xl animate-in slide-in-from-top-2 duration-200 shadow-2xl">
-          {navItems.map((item) => {
-            const active = currentTab === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
-                  active
-                    ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-white border border-cyan-500/30'
-                    : 'text-slate-300 hover:bg-slate-800/60'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  {item.icon}
-                  <span>{item.label}</span>
-                </div>
-                {item.badge && (
-                  <span
-                    className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                      item.badge === 'AO VIVO'
-                        ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-                        : item.badge === 'TOP'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-pink-500/20 text-pink-300 border border-pink-500/30'
-                    }`}
-                  >
-                    {item.badge}
-                  </span>
-                )}
-              </button>
-            );
-          })}
+      {/* CENTER: Professional, Minimalist Typography Navigation (UniTV Style) */}
+      <nav className="hidden md:flex items-center gap-1 sm:gap-2">
+        {navTabs.map((tab) => {
+          const isActive =
+            currentTab === tab.id ||
+            (tab.id === 'channels' && currentTab === 'home') ||
+            (tab.id === ('filmes' as any) && currentTab === 'movies');
+
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setCurrentTab(tab.id)}
+              className={`relative px-4 py-2 text-xs lg:text-sm font-bold tracking-widest transition-all duration-200 rounded-lg ${
+                isActive
+                  ? 'text-white bg-white/[0.08] shadow-inner'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-white/[0.03]'
+              }`}
+            >
+              <span>{tab.label}</span>
+
+              {tab.count !== undefined && (
+                <span className="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                  {tab.count}
+                </span>
+              )}
+
+              {/* Glowing bottom line indicator for active tab */}
+              {isActive && (
+                <span className="absolute bottom-0 left-3 right-3 h-[2.5px] bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 rounded-full shadow-md shadow-cyan-400/80" />
+              )}
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* RIGHT: Status, Search, Clock (UniTV OSD Bar) */}
+      <div className="flex items-center gap-4">
+        {/* Connection & Quality Badge */}
+        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 border border-white/[0.06] text-xs font-mono">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-emerald-400 font-bold">ONLINE</span>
+          <span className="text-slate-600">|</span>
+          <span className="text-slate-300">1080P FHD</span>
         </div>
-      )}
+
+        {/* Search Button */}
+        <button
+          onClick={() => setIsSearchOpen(true)}
+          className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white transition-all text-xs font-medium cursor-pointer"
+          title="Buscar canais, filmes ou séries (Ctrl+K)"
+        >
+          <Search className="w-3.5 h-3.5 text-cyan-400" />
+          <span className="hidden sm:inline text-slate-400">Buscar...</span>
+          <kbd className="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] font-mono bg-black/40 text-slate-400 border border-white/[0.06]">
+            Ctrl K
+          </kbd>
+        </button>
+
+        {/* Digital Clock */}
+        <div className="hidden sm:flex flex-col items-end leading-tight text-right pl-1 border-l border-white/[0.08]">
+          <span className="font-mono text-sm font-black text-white tracking-wider">
+            {timeStr || '00:00:00'}
+          </span>
+          <span className="text-[10px] font-medium text-slate-400 uppercase">
+            {dateStr}
+          </span>
+        </div>
+      </div>
     </header>
   );
 };

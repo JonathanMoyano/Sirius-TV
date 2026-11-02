@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Hls from 'hls.js';
 import { Channel, StreamSource } from '../types';
 import { useApp } from '../context/AppContext';
+import { resolvePlayableUrl } from '../utils/streamUrl';
 import {
   Star,
   Maximize2,
@@ -108,19 +109,26 @@ export const ChannelPlayerView: React.FC<ChannelPlayerViewProps> = ({
           hls.on(Hls.Events.MANIFEST_PARSED, () => {
             setIsBuffering(false);
             setHasError(false);
-            video.play().catch(() => {});
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {
+                video.muted = true;
+                setIsMuted(true);
+                video.play().catch(() => {});
+              });
+            }
           });
 
           hls.on(Hls.Events.ERROR, (_event, data) => {
             if (data.fatal) {
               switch (data.type) {
                 case Hls.ErrorTypes.NETWORK_ERROR:
-                  if (!isFallback && !targetUrl.startsWith('/api/proxy')) {
+                  if (!isFallback) {
                     console.log('Direct HLS failed, trying proxy fallback...');
                     hls.destroy();
                     const proxyHls = new Hls({ enableWorker: true });
                     hlsRef.current = proxyHls;
-                    loadWithProxyFallback(`/api/proxy?url=${encodeURIComponent(rawUrl)}`, true);
+                    loadWithProxyFallback(resolvePlayableUrl(rawUrl, true), true);
                     return;
                   }
                   setHasError(true);

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useMemo } from 'react';
 import Hls from 'hls.js';
 import { useApp } from '../context/AppContext';
 import { MediaItem, Channel, StreamSource } from '../types';
+import { resolvePlayableUrl } from '../utils/streamUrl';
 import {
   X,
   Maximize2,
@@ -100,23 +101,41 @@ export const VideoPlayerModal: React.FC = () => {
         });
         hlsRef.current = hls;
 
-        hls.loadSource(activeSource.url);
+        const targetStreamUrl = resolvePlayableUrl(activeSource.url);
+        hls.loadSource(targetStreamUrl);
         hls.attachMedia(video);
 
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
           setIsBuffering(false);
-          video.play().catch(() => {
-            // Autoplay with sound may be blocked by browser; user can click play
-            setIsPlaying(false);
-          });
+          setHasError(false);
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // Browser blocked unmuted autoplay: fall back to muted and play
+              video.muted = true;
+              setIsMuted(true);
+              video.play().catch(() => setIsPlaying(false));
+            });
+          }
         });
 
         hls.on(Hls.Events.ERROR, (_, data) => {
           if (data.fatal) {
             switch (data.type) {
               case Hls.ErrorTypes.NETWORK_ERROR:
-                console.warn('[Sirius Video] Erro de rede HLS, tentando recuperar...');
-                hls.startLoad();
+                if (!targetStreamUrl.includes('/api/proxy')) {
+                  console.warn('[Sirius Video] Tentando proxy de fallback...');
+                  hls.destroy();
+                  const proxyHls = new Hls({ enableWorker: true });
+                  hlsRef.current = proxyHls;
+                  proxyHls.loadSource(resolvePlayableUrl(activeSource.url, true));
+                  proxyHls.attachMedia(video);
+                  return;
+                }
+                hls.destroy();
+                setHasError(true);
+                setErrorMessage('Transmissão offline ou bloqueada neste servidor.');
+                setIsBuffering(false);
                 break;
               case Hls.ErrorTypes.MEDIA_ERROR:
                 console.warn('[Sirius Video] Erro de mídia HLS, recuperando...');

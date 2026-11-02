@@ -1,23 +1,29 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import Hls from 'hls.js';
 import { useApp } from '../context/AppContext';
-import { Channel, MediaItem, StreamSource } from '../types';
+import { MediaItem, Channel, StreamSource } from '../types';
 import {
   X,
   Maximize2,
   Minimize2,
   Server,
   AlertTriangle,
-  ExternalLink,
   ChevronLeft,
   ChevronRight,
   Radio,
   Tv,
   ListVideo,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  RotateCcw,
 } from 'lucide-react';
 
 export const VideoPlayerModal: React.FC = () => {
   const { playerState, closePlayer, switchServer, openPlayer } = useApp();
+
+  // All Hooks MUST be at the top unconditionally
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const hlsRef = useRef<Hls | null>(null);
@@ -26,51 +32,71 @@ export const VideoPlayerModal: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showEpisodeDrawer, setShowEpisodeDrawer] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [isBuffering, setIsBuffering] = useState(false);
 
   const { isOpen, item, episode, seasonNumber, serverIndex } = playerState;
 
-  if (!isOpen || !item) return null;
+  // Compute stream sources safely
+  const sources: StreamSource[] = useMemo(() => {
+    if (!item) return [];
 
-  // Determine available sources
-  let sources: StreamSource[] = [];
-  if (episode && episode.sources && episode.sources.length > 0) {
-    sources = episode.sources;
-  } else if ('sources' in item && item.sources && item.sources.length > 0) {
-    sources = item.sources;
-  } else {
-    sources = [{ name: 'Servidor Principal', url: '', type: 'embed' }];
-  }
+    if (episode && episode.sources && episode.sources.length > 0) {
+      return episode.sources;
+    }
+
+    if ('sources' in item && Array.isArray(item.sources) && item.sources.length > 0) {
+      return (item as any).sources.map((src: any, idx: number) => {
+        if (typeof src === 'string') {
+          return {
+            name: `Servidor ${idx + 1}`,
+            url: src,
+            type: src.includes('.m3u8') ? 'hls' : 'embed',
+          };
+        }
+        return src;
+      });
+    }
+
+    return [{ name: 'Servidor Principal', url: '', type: 'embed' }];
+  }, [item, episode]);
 
   const activeSource = sources[serverIndex] || sources[0];
 
-  // Initialize or update Video / Hls player
+  // HLS and Video Initialization Hook
   useEffect(() => {
+    if (!isOpen || !item || !activeSource?.url) return;
+
     setHasError(false);
     setErrorMessage('');
-
-    if (activeSource?.type !== 'hls' && activeSource?.type !== 'mp4') {
-      // Destroy previous HLS instance if switching to embed
-      if (hlsRef.current) {
-        hlsRef.current.destroy();
-        hlsRef.current = null;
-      }
-      return;
-    }
+    setIsBuffering(true);
 
     const video = videoRef.current;
-    if (!video || !activeSource?.url) return;
+    if (!video) return;
 
+    // Cleanup any existing HLS instance
     if (hlsRef.current) {
       hlsRef.current.destroy();
       hlsRef.current = null;
     }
 
-    if (activeSource.type === 'hls') {
+    const isDirectHls =
+      activeSource.type === 'hls' ||
+      activeSource.url.includes('.m3u8') ||
+      activeSource.url.includes('/playlist');
+
+    if (isDirectHls) {
       if (Hls.isSupported()) {
         const hls = new Hls({
           enableWorker: true,
           lowLatencyMode: true,
           backBufferLength: 90,
+          manifestLoadingTimeOut: 10000,
+          manifestLoadingMaxRetry: 3,
+          levelLoadingTimeOut: 10000,
         });
         hlsRef.current = hls;
 
@@ -78,8 +104,10 @@ export const VideoPlayerModal: React.FC = () => {
         hls.attachMedia(video);
 
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          setIsBuffering(false);
           video.play().catch(() => {
-            // Autoplay with sound may be blocked by browser policy; user can click play
+            // Autoplay with sound may be blocked by browser; user can click play
+            setIsPlaying(false);
           });
         });
 
@@ -87,32 +115,33 @@ export const VideoPlayerModal: React.FC = () => {
           if (data.fatal) {
             switch (data.type) {
               case Hls.ErrorTypes.NETWORK_ERROR:
+                console.warn('[Sirius Video] Erro de rede HLS, tentando recuperar...');
                 hls.startLoad();
                 break;
               case Hls.ErrorTypes.MEDIA_ERROR:
+                console.warn('[Sirius Video] Erro de mídia HLS, recuperando...');
                 hls.recoverMediaError();
                 break;
               default:
                 hls.destroy();
                 setHasError(true);
-                setErrorMessage('Falha ao conectar à transmissão deste servidor.');
+                setErrorMessage('Transmissão offline ou bloqueada neste servidor.');
+                setIsBuffering(false);
                 break;
             }
           }
         });
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // Native HLS for Safari / iOS
+        // Native Safari / iOS support
         video.src = activeSource.url;
-        video.addEventListener('loadedmetadata', () => {
-          video.play().catch(() => {});
-        });
+        video.play().catch(() => setIsPlaying(false));
       } else {
         setHasError(true);
-        setErrorMessage('Seu navegador não suporta reprodução HLS direta.');
+        setErrorMessage('Navegador sem suporte a HLS nativo.');
       }
     } else if (activeSource.type === 'mp4') {
       video.src = activeSource.url;
-      video.play().catch(() => {});
+      video.play().catch(() => setIsPlaying(false));
     }
 
     return () => {
@@ -121,7 +150,39 @@ export const VideoPlayerModal: React.FC = () => {
         hlsRef.current = null;
       }
     };
-  }, [activeSource]);
+  }, [isOpen, item, activeSource]);
+
+  // Video time tracking
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const onTimeUpdate = () => setCurrentTime(video.currentTime);
+    const onLoadedMetadata = () => {
+      setDuration(video.duration || 0);
+      setIsBuffering(false);
+    };
+    const onWaiting = () => setIsBuffering(true);
+    const onPlaying = () => {
+      setIsBuffering(false);
+      setIsPlaying(true);
+    };
+    const onPause = () => setIsPlaying(false);
+
+    video.addEventListener('timeupdate', onTimeUpdate);
+    video.addEventListener('loadedmetadata', onLoadedMetadata);
+    video.addEventListener('waiting', onWaiting);
+    video.addEventListener('playing', onPlaying);
+    video.addEventListener('pause', onPause);
+
+    return () => {
+      video.removeEventListener('timeupdate', onTimeUpdate);
+      video.removeEventListener('loadedmetadata', onLoadedMetadata);
+      video.removeEventListener('waiting', onWaiting);
+      video.removeEventListener('playing', onPlaying);
+      video.removeEventListener('pause', onPause);
+    };
+  }, [isOpen]);
 
   // Fullscreen toggle
   const toggleFullscreen = () => {
@@ -133,20 +194,52 @@ export const VideoPlayerModal: React.FC = () => {
     }
   };
 
-  // Series navigation: Next / Previous episode
-  const isSeriesOrDorama = 'seasons' in item && item.seasons && item.seasons.length > 0;
-  let allEpisodes: { ep: any; sNum: number }[] = [];
-  if (isSeriesOrDorama && (item as MediaItem).seasons) {
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
+  };
+
+  const seek = (seconds: number) => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = Math.max(0, Math.min(video.currentTime + seconds, video.duration || 0));
+  };
+
+  // Series/Doramas episode navigation
+  const isSeriesOrDorama = !!(item && 'seasons' in item && item.seasons && item.seasons.length > 0);
+  const allEpisodes = useMemo(() => {
+    if (!isSeriesOrDorama || !item) return [];
+    const list: { ep: any; sNum: number }[] = [];
     (item as MediaItem).seasons!.forEach((s) => {
       s.episodes.forEach((e) => {
-        allEpisodes.push({ ep: e, sNum: s.seasonNumber });
+        list.push({ ep: e, sNum: s.seasonNumber });
       });
     });
-  }
+    return list;
+  }, [isSeriesOrDorama, item]);
 
   const currentEpIndex = allEpisodes.findIndex((e) => e.ep.id === episode?.id);
   const prevEp = currentEpIndex > 0 ? allEpisodes[currentEpIndex - 1] : null;
   const nextEp = currentEpIndex >= 0 && currentEpIndex < allEpisodes.length - 1 ? allEpisodes[currentEpIndex + 1] : null;
+
+  // ONLY return null when isOpen is false AFTER all hooks have executed!
+  if (!isOpen || !item) {
+    return null;
+  }
 
   const titleText = episode
     ? `${'title' in item ? item.title : item.name} - T${seasonNumber} E${episode.episodeNumber}`
@@ -155,13 +248,13 @@ export const VideoPlayerModal: React.FC = () => {
     : item.title;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-2 sm:p-4 lg:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-2xl p-0 sm:p-2 lg:p-4 animate-in fade-in duration-200 select-none">
       <div
         ref={containerRef}
-        className="relative w-full max-w-6xl max-h-[96vh] flex flex-col bg-[#070913] border border-slate-800 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden"
+        className="relative w-full h-full max-w-7xl max-h-[100vh] sm:max-h-[96vh] flex flex-col bg-[#05070f] border border-slate-800/80 rounded-none sm:rounded-3xl shadow-2xl overflow-hidden"
       >
-        {/* Top Bar / Header */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 bg-slate-950/90 border-b border-slate-800/80 z-20">
+        {/* Top Header Bar */}
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-slate-950/95 border-b border-slate-800/80 z-30">
           <div className="flex items-center gap-3 min-w-0">
             {'category' in item ? (
               <span className="p-2 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/30 flex items-center gap-1.5 shrink-0">
@@ -186,7 +279,7 @@ export const VideoPlayerModal: React.FC = () => {
             </div>
           </div>
 
-          {/* Action buttons */}
+          {/* Quick Action Buttons */}
           <div className="flex items-center gap-2 shrink-0">
             {isSeriesOrDorama && (
               <button
@@ -214,32 +307,32 @@ export const VideoPlayerModal: React.FC = () => {
             <button
               onClick={closePlayer}
               className="p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500 hover:text-white border border-rose-500/30 text-rose-400 transition-colors"
-              title="Fechar player"
+              title="Fechar"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* Video Player Display Area */}
-        <div className="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden">
+        {/* Video Screen Area */}
+        <div className="relative w-full flex-1 bg-black flex items-center justify-center overflow-hidden group">
           {hasError ? (
-            <div className="p-6 text-center max-w-md space-y-4">
-              <div className="w-12 h-12 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center mx-auto">
-                <AlertTriangle className="w-6 h-6" />
+            <div className="p-6 text-center max-w-md space-y-4 z-20">
+              <div className="w-14 h-14 rounded-2xl bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center mx-auto shadow-lg shadow-rose-500/20">
+                <AlertTriangle className="w-7 h-7" />
               </div>
               <h3 className="text-lg font-bold text-white">Transmissão indisponível neste servidor</h3>
               <p className="text-xs sm:text-sm text-slate-400">
-                {errorMessage || 'Tente mudar para outro servidor abaixo ou abrir no player externo.'}
+                {errorMessage || 'Tente mudar para outro servidor abaixo.'}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
                 {sources.map((s, idx) => (
                   <button
                     key={idx}
                     onClick={() => switchServer(idx)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                       idx === serverIndex
-                        ? 'bg-cyan-400 text-slate-950'
+                        ? 'bg-cyan-400 text-slate-950 shadow-md shadow-cyan-400/30'
                         : 'bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700'
                     }`}
                   >
@@ -257,21 +350,30 @@ export const VideoPlayerModal: React.FC = () => {
               allowFullScreen
             />
           ) : (
-            <video
-              ref={videoRef}
-              className="w-full h-full object-contain"
-              controls
-              playsInline
-              onError={() => {
-                setHasError(true);
-                setErrorMessage('Falha ao carregar o fluxo de vídeo.');
-              }}
-            />
+            <>
+              <video
+                ref={videoRef}
+                className="w-full h-full object-contain cursor-pointer"
+                onClick={togglePlay}
+                playsInline
+                onError={() => {
+                  setHasError(true);
+                  setErrorMessage('Falha ao carregar fluxo de vídeo.');
+                }}
+              />
+
+              {/* Buffering Spinner */}
+              {isBuffering && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40 pointer-events-none">
+                  <div className="w-12 h-12 border-4 border-cyan-400/20 border-t-cyan-400 rounded-full animate-spin" />
+                </div>
+              )}
+            </>
           )}
 
-          {/* Episode Drawer Sidebar Overlay (for series/doramas) */}
+          {/* Episode Drawer Sidebar */}
           {showEpisodeDrawer && isSeriesOrDorama && (
-            <div className="absolute top-0 right-0 bottom-0 w-80 bg-slate-950/95 backdrop-blur-xl border-l border-slate-800 p-4 overflow-y-auto z-30 animate-in slide-in-from-right duration-200">
+            <div className="absolute top-0 right-0 bottom-0 w-80 bg-slate-950/95 backdrop-blur-xl border-l border-slate-800 p-4 overflow-y-auto z-40 animate-in slide-in-from-right duration-200">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                 <h4 className="font-bold text-sm text-white">Episódios</h4>
                 <button
@@ -319,9 +421,38 @@ export const VideoPlayerModal: React.FC = () => {
           )}
         </div>
 
-        {/* Bottom Control Bar: Server Switcher & Episode Navigation */}
-        <div className="p-3 sm:p-4 bg-slate-950/90 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
-          {/* Server Selectors */}
+        {/* Bottom Control Bar */}
+        <div className="p-3 sm:p-4 bg-slate-950/95 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs z-30">
+          {/* Playback Controls (if not embed) */}
+          {activeSource?.type !== 'embed' && (
+            <div className="flex items-center gap-3">
+              <button
+                onClick={togglePlay}
+                className="p-2 rounded-xl bg-cyan-400 text-slate-950 hover:bg-cyan-300 transition-colors"
+                title={isPlaying ? 'Pausar' : 'Reproduzir'}
+              >
+                {isPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current translate-x-0.5" />}
+              </button>
+
+              <button
+                onClick={toggleMute}
+                className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                title={isMuted ? 'Desmutar' : 'Mutar'}
+              >
+                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+              </button>
+
+              <button
+                onClick={() => seek(-10)}
+                className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                title="Voltar 10s"
+              >
+                <RotateCcw className="w-4 h-4" />
+              </button>
+            </div>
+          )}
+
+          {/* Server Switchers */}
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
             <span className="flex items-center gap-1.5 text-slate-400 font-semibold shrink-0">
               <Server className="w-3.5 h-3.5 text-cyan-400" />
@@ -338,12 +469,12 @@ export const VideoPlayerModal: React.FC = () => {
                     : 'bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700/80'
                 }`}
               >
-                {s.name}
+                {s.name || `Servidor ${idx + 1}`}
               </button>
             ))}
           </div>
 
-          {/* Previous / Next Episode buttons */}
+          {/* Series Episode Navigation */}
           {isSeriesOrDorama && (
             <div className="flex items-center gap-2 shrink-0">
               <button

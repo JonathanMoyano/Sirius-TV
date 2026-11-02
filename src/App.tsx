@@ -10,6 +10,7 @@ import { DetailModal } from './components/DetailModal';
 import { SearchModal } from './components/SearchModal';
 import { EPGGuide } from './components/EPGGuide';
 import { Footer } from './components/Footer';
+import { UniTvLiveView } from './components/UniTvLiveView';
 import { moviesData } from './data/movies';
 import { seriesData } from './data/series';
 import { doramasData } from './data/doramas';
@@ -296,61 +297,9 @@ export const AppContent: React.FC = () => {
         )}
 
         {/* =========================================
-            TAB 2: CANAIS DE TV AO VIVO
+            TAB 2: CANAIS DE TV AO VIVO (MODO UNITV)
         ========================================= */}
-        {currentTab === 'channels' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
-              <div>
-                <div className="flex items-center gap-2">
-                  <Radio className="w-6 h-6 text-rose-500 animate-pulse" />
-                  <h1 className="text-2xl sm:text-3xl font-black text-white">
-                    TV Ao Vivo no Sirius TV
-                  </h1>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                  Transmissões de alta qualidade com guia de programação em tempo real.
-                </p>
-              </div>
-
-              {/* Category Filter Pills */}
-              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
-                {['Todos', 'TV Aberta', 'Esportes', 'Filmes e Séries', 'Notícias', 'Infantil', 'Documentários'].map(
-                  (cat) => (
-                    <button
-                      key={cat}
-                      onClick={() => setSelectedChannelCategory(cat)}
-                      className={`px-3.5 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all ${
-                        selectedChannelCategory === cat
-                          ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white shadow-md shadow-rose-500/20'
-                          : 'bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  )
-                )}
-              </div>
-            </div>
-
-            {/* Channels Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {allChannels
-                .filter(
-                  (c) =>
-                    selectedChannelCategory === 'Todos' || c.category === selectedChannelCategory
-                )
-                .map((channel) => (
-                  <ChannelCard key={channel.id} channel={channel} />
-                ))}
-            </div>
-
-            {/* Program Guide component */}
-            <div className="pt-8">
-              <EPGGuide />
-            </div>
-          </div>
-        )}
+        {currentTab === 'channels' && <UniTvLiveView />}
 
         {/* =========================================
             TAB 3: FILMES
@@ -644,8 +593,8 @@ export const AppContent: React.FC = () => {
       <DetailModal />
       <SearchModal />
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer (hidden in UniTV live mode) */}
+      {currentTab !== 'channels' && <Footer />}
     </div>
   );
 };

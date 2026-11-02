@@ -6,7 +6,6 @@
         "logo":  "https://img.faz-o-eli.online/ae.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/aee/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/c15c07d193874d37025b4e84811f7096/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/518547.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/518548.m3u8"
                     ]
@@ -19,7 +18,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/adultswim/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/1167fe66d918c2b48a68300d5dd8d4ca/adultswim.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/33ce04ffe5ab0ab8c375cc324aac266f/error.txt",
                         "https://aws.s13-s1001604.lat/stream/155c57d887e879fa1e273477160c90cc/adultswim.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/518592.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/518594.m3u8",
@@ -33,7 +31,6 @@
         "logo":  "https://img.faz-o-eli.online/amc.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/amc/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/d0e9c85a30b1ca49808a7e83df4ead63/error.txt",
                         "http://45.185.11.126:8000/play/a06s/index.m3u8"
                     ]
     },
@@ -45,7 +42,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/animalplanet/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/b334d79db281e34cdadd49b0feff5c9d/animalplanet.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/b9d136b917437d532bd57a8e05d536de/error.txt",
                         "https://aws.s13-s1001604.lat/stream/f8aeec6dfc86c2ab66efa1ee0dcf88cf/animalplanet.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/296619.m3u8"
                     ]
@@ -57,7 +53,6 @@
         "logo":  "https://mondrian.claro.com.br/channels/inverse/band.png",
         "sources":  [
                         "https://aws.s13-s1001604.lat/stream/730ac1333b65dfb93db561cc2a4f2a53/bandsp.m3u8",
-                        "https://8f246fdcdd11e03e7750ed4f8e050161.s25-cloudfront-net.lat/stream/41f3ad648b8590ca219cf5e28b908b0b/error.txt",
                         "https://vipwaytvcdn.multtv.tv.br:5444/TVThathi_Band/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/07796236cd172aa71cce222d1f7e3864/bandsp.m3u8",
                         "http://138.204.86.4:8080/BAND_HD/index.m3u8",
@@ -72,7 +67,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/cartoonnetwork/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/f20eee8ca370156a3e6ee41459384861/cartoonnetwork.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/ba19879a36063dead597a258611dea7a/error.txt",
                         "https://aws.s13-s1001604.lat/stream/2a5902a94396cefa6fe0ce92ba674726/cartoonnetwork.m3u8",
                         "http://45.162.64.114/CARTOON_NETWORK/index.m3u8"
                     ]
@@ -88,7 +82,6 @@
                         "https://d25usgadhphvwi.cloudfront.net/hls/stv-plus1920x1080/playlist.m3u8",
                         "http://45.162.64.114/CNN_BRASIL/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/84fb36b0e1e31ed913812068f8b0e7e0/cnnbrasil.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/cb0347641e1affb5c895c4d5711d4df5/error.txt",
                         "https://amg01391-sbtinfast-amg01391c4-lg-br-4597.playouts.now.amagi.tv/playlist/amg01391-addigital-cnnbrasil-lgbr/playlist.m3u8"
                     ]
     },
@@ -121,7 +114,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/getv/index.m3u8",
                         "https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist1080p.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/eb25a6e56ca9af39c1c055e3a66307ab/error.txt",
                         "https://proxylinkurl.wored85282.workers.dev/https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8",
                         "https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8",
                         "https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8",
@@ -139,7 +131,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globonews/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/f40b5972e5f78e715aaf2034cdaac946/globonews.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/fb68bda31e4a160d2ba3d40a5d8db91f/error.txt",
                         "https://aws.s13-s1001604.lat/stream/6ca0fa6a24a397e4b47dc8d32fb23e44/globonews.m3u8",
                         "https://16-5-0-235.sslip.io/globonews/index.m3u8",
                         "http://79.127.238.228:14093",
@@ -153,7 +144,6 @@
         "logo":  "https://img.faz-o-eli.online/globonovelas.prev.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globoplaynovelas/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e80926f4d41ff58b5350970649df47d9/error.txt",
                         "http://79.127.238.228:14455",
                         "http://64.31.23.207:80/59471019/60849037/518595.m3u8"
                     ]
@@ -165,7 +155,6 @@
         "logo":  "https://img.faz-o-eli.online/gnt.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/gnt/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/be3109bd2b74b91e3d1be08b28bf138d/error.txt",
                         "https://16-5-0-235.sslip.io/gnt/index.m3u8",
                         "http://79.127.238.228:14402",
                         "http://64.31.23.207:80/59471019/60849037/518568.m3u8",
@@ -182,7 +171,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/history/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/575a47cf188e44f46687363629749b7f/history.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/81cd1c0411b55bbfbd05c17d4de8ed1b/error.txt",
                         "https://aws.s13-s1001604.lat/stream/b7f760cafffad9e253824034a05a8138/history.m3u8",
                         "http://138.204.86.4:8080/HISTORY_HD/index.m3u8",
                         "http://46.151.196.223:14410",
@@ -197,7 +185,6 @@
         "logo":  "https://img.faz-o-eli.online/history2.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/history2/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/10dc3b83c0a11e9ad2061bed2e5cd457/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/296617.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/296618.m3u8"
                     ]
@@ -223,7 +210,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/megapix/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/4449454c379f5034e01629ff759af317/megapix.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/90de9d06c696cf44283c2b9130364e1a/error.txt",
                         "https://aws.s13-s1001604.lat/stream/cc13f77891f8b4080db512be42439d82/megapix.m3u8",
                         "https://16-5-0-235.sslip.io/megapix/index.m3u8",
                         "http://79.127.238.228:14592",
@@ -237,7 +223,6 @@
         "logo":  "https://img.faz-o-eli.online/multishow.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/multishow/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/b9e47911db1b413212b3058b86296860/error.txt",
                         "https://aws.s13-s1001604.lat/stream/20aa200451a750a1367af30f8268595a/multishow.m3u8",
                         "https://aws.s13-s1001604.lat/stream/f0c2adfea3778abad92dc655d5b961a9/multishow.m3u8",
                         "https://16-5-0-235.sslip.io/multishow/index.m3u8",
@@ -250,8 +235,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/premiere.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiere2/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/047cf0d69831d3c678a4daab4a658d64/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiere2/index.m3u8"
                     ]
     },
     {
@@ -260,8 +244,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/premiere.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiere3/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/892e5eed7dcf9d9978e6a752ed8bac2e/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiere3/index.m3u8"
                     ]
     },
     {
@@ -270,8 +253,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/premiere.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiere4/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/387336609c688359fe1c8dd3eb798a18/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiere4/index.m3u8"
                     ]
     },
     {
@@ -281,7 +263,6 @@
         "logo":  "https://img.faz-o-eli.online/premiere.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiere5/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/c746f5afba7e4e63eef95c60c2c42125/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/3460221.m3u8"
                     ]
     },
@@ -327,7 +308,6 @@
         "logo":  "https://img.faz-o-eli.online/premiere.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/premiereclubes/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/09fa89e371c7b10ad5e48266b2d7a261/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/3460210.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460211.m3u8",
                         "http://45.185.11.126:8000/play/a06g/index.m3u8"
@@ -340,7 +320,6 @@
         "logo":  "https://mondrian.claro.com.br/channels/inverse/sbt.png",
         "sources":  [
                         "http://138.204.86.4:8080/SBT_HD/index.m3u8",
-                        "https://8f246fdcdd11e03e7750ed4f8e050161.s25-cloudfront-net.lat/stream/490cc63080757904d5fd8a95fd1f34f6/error.txt",
                         "https://aovivo.maissbt.com/indexMobile.m3u8",
                         "https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/324290.m3u8",
@@ -366,7 +345,6 @@
         "logo":  "https://img.faz-o-eli.online/sonychannel.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/sonychannel/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/0dab17515db612fe8d4496bf8c477fdd/error.txt",
                         "http://170.83.16.50/SONY_CHANNEL/index.m3u8"
                     ]
     },
@@ -378,7 +356,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/sportv/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/f809a47c8a40c3642b96a3df2c2e563c/sportv.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/6d42cfb0a7106e953bc582f1b9a6763a/error.txt",
                         "https://aws.s13-s1001604.lat/stream/df68c287a5e76abe2df09d30cb0e9b37/sportv.m3u8",
                         "https://16-5-0-235.sslip.io/sportv/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460200.m3u8",
@@ -392,7 +369,6 @@
         "logo":  "https://img.faz-o-eli.online/sportv2.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/sportv2/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/c6d6ba1e905811d68b4e280f0e2321a4/error.txt",
                         "https://16-5-0-235.sslip.io/sportv2/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460203.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460204.m3u8",
@@ -406,7 +382,6 @@
         "logo":  "https://img.faz-o-eli.online/sportv3.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/sportv3/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e7e4de42b3bcdff4ea97933dcadf207f/error.txt",
                         "https://16-5-0-235.sslip.io/sportv3/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460206.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460207.m3u8",
@@ -420,7 +395,6 @@
         "logo":  "https://img.faz-o-eli.online/off.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/canaloff/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/312a3f6b9f74b4c4dea1e4cf7a0dcaf2/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/518583.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/518584.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/518585.m3u8",
@@ -434,7 +408,6 @@
         "logo":  "https://img.faz-o-eli.online/telecineaction.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tcaction/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/9765ae411615048a95399204582fe58c/error.txt",
                         "http://45.185.11.126:8000/play/a058/index.m3u8"
                     ]
     },
@@ -445,7 +418,6 @@
         "logo":  "https://img.faz-o-eli.online/telecinepipoca.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tcpipoca/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/a92df8f8e898abac95e876f8eb0f3d37/error.txt",
                         "http://45.185.11.126:8000/play/a08g/index.m3u8"
                     ]
     },
@@ -455,8 +427,7 @@
         "category":  "Filmes e Séries",
         "logo":  "https://img.faz-o-eli.online/telecinepremium.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tcpremium/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/17a2f646521baa5a7ef62eccd38b8bf6/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tcpremium/index.m3u8"
                     ]
     },
     {
@@ -495,8 +466,7 @@
         "category":  "Filmes e Séries",
         "logo":  "https://img.faz-o-eli.online/warnerchannel.png",
         "sources":  [
-                        "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/warner/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/f216045c6ea3681570f66cf81112bacc/error.txt"
+                        "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/warner/index.m3u8"
                     ]
     },
     {
@@ -518,7 +488,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globosp/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/25c389d4965f4166247f2280886f5cba/globosp.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/82c46469c020de6418e5676df8bc0b51/error.txt",
                         "https://16-5-0-235.sslip.io/globosp/index.m3u8"
                     ]
     },
@@ -530,7 +499,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/cartoonito/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/06fb008bc2fe2c3944c72e0c3ca551d4/cartoonito.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e7dd81897694afa1706525e8770bcc9a/error.txt",
                         "https://aws.s13-s1001604.lat/stream/25787f329c85c3fee8876507d3b3778a/cartoonito.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/1882631.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/1882633.m3u8",
@@ -545,7 +513,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/cinemax/index.m3u8",
                         "http://138.204.86.4:8080/CINEMAX/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e6c9e404e4f0cd673af419393d75b392/error.txt",
                         "http://45.185.11.126:8000/play/a081/index.m3u8"
                     ]
     },
@@ -557,7 +524,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/discoverychannel/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/abda9d242318532ccceeb60faa73e3cf/discoverychannel.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e28bf0fed83f4889c7d23224dbecdfa1/error.txt",
                         "https://aws.s13-s1001604.lat/stream/a1d16892ebba8e03b94f103b89c154c0/discoverychannel.m3u8",
                         "http://138.204.86.4:8080/DISCOVERY_HD/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297936.m3u8",
@@ -575,7 +541,6 @@
                         "https://aws.s13-s1001604.lat/stream/86c15a533bf883acfde634c9b2077da0/discoverykids.m3u8",
                         "https://aws.s13-s1001604.lat/stream/5a43285f2c9b46548851d73ff8ae7190/discoverykids.m3u8",
                         "http://138.204.86.4:8080/DISCOVERY_KIDS_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/c0762af64c86af8ae17df56902466bf9/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/297946.m3u8",
                         "http://45.185.11.126:8000/play/a0ad/index.m3u8"
                     ]
@@ -588,7 +553,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/discoverytheater/index.m3u8",
                         "http://138.204.86.4:8080/DISCOVERY_THEATER_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/4c1a6240651169a33936244d60da3e36/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/297954.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297956.m3u8",
                         "http://45.185.11.126:8000/play/a085/index.m3u8"
@@ -602,7 +566,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/espn/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/48cae3919e89e385e3789102c01f9a97/espn.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/edfeb9b7a050b21ff86fd4e14d4df830/error.txt",
                         "http://45.162.64.114/ESPN_BRASIL/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/dbf76b5a3f66249763951288cbd98053/espn.m3u8",
                         "https://16-5-0-235.sslip.io/espn/index.m3u8",
@@ -620,7 +583,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/espn2/index.m3u8",
                         "http://138.204.86.4:8080/ESPN2_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/61c168a5c8e93c396f48e9c0d5d255c5/error.txt",
                         "https://16-5-0-235.sslip.io/espn2/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460185.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460186.m3u8"
@@ -634,7 +596,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/espn4/index.m3u8",
                         "http://45.162.64.114/ESPN_4/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/510d20496dc6bb017304d125c737f16c/error.txt",
                         "https://16-5-0-235.sslip.io/espn4/index.m3u8",
                         "http://138.204.86.4:8080/ESPN4_HD/index.m3u8",
                         "http://181.78.197.59:8000/play/a07n/index.m3u8",
@@ -649,7 +610,6 @@
         "logo":  "https://img.faz-o-eli.online/espn5.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/espn5/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/0a46661d2b547051170a06f7d41c6c48/error.txt",
                         "https://16-5-0-235.sslip.io/espn5/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460194.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460195.m3u8",
@@ -663,7 +623,6 @@
         "logo":  "https://img.faz-o-eli.online/espn6.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/espn6/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/9970c90d40cc79692cb998497fe02e07/error.txt",
                         "https://16-5-0-235.sslip.io/espn6/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460198.m3u8",
                         "http://45.185.11.126:8000/play/a084/index.m3u8"
@@ -676,7 +635,6 @@
         "logo":  "https://img.faz-o-eli.online/hbo.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/hbo/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/8520f8566134884abf64275eecc51dee/error.txt",
                         "http://138.204.86.4:8080/HBO/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514107.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514108.m3u8"
@@ -689,7 +647,6 @@
         "logo":  "https://img.faz-o-eli.online/hbo2.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/hbo2/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/b3f963ec6c4c1baca4b0c4b370a2dea8/error.txt",
                         "http://138.204.86.4:8080/HBO2/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514110.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514111.m3u8",
@@ -703,7 +660,6 @@
         "logo":  "https://img.faz-o-eli.online/hbofamily.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/hbofamily/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/a187e8a8237a0499484eba32a9ef8e4e/error.txt",
                         "http://138.204.86.4:8080/HBO_FAMILY/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514113.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514114.m3u8"
@@ -717,7 +673,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/hbomundi/index.m3u8",
                         "http://138.204.86.4:8080/HBO_MUNDI_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/f6d15eeb7347015724de6560563be32c/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/514116.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514117.m3u8"
                     ]
@@ -729,7 +684,6 @@
         "logo":  "https://img.faz-o-eli.online/hboplus.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/hboplus/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/26ca39c1d4faa298e2b902237f2028fb/error.txt",
                         "http://138.204.86.4:8080/HBO_PLUS/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514119.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514120.m3u8"
@@ -742,7 +696,6 @@
         "logo":  "https://img.faz-o-eli.online/hbopop.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/hbopop/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/c02252a7082ff84010ae1815a1b88d68/error.txt",
                         "http://138.204.86.4:8080/HBO_POP_HD/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514122.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/514123.m3u8",
@@ -779,7 +732,6 @@
         "category":  "TV Aberta",
         "logo":  "https://mondrian.claro.com.br/channels/inverse/record-tv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/ee45560b3bf960ee39cc94fd34fa03d4/error.txt",
                         "https://video07.logicahost.com.br/portaltropicalrn/portaltropicalrn/chunklist_w1168987890.m3u8",
                         "http://138.204.86.4:8080/RECORD/index.m3u8",
                         "http://79.127.238.228:14057"
@@ -793,7 +745,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/space/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/167cfc64b5af287be1f19fb996d5c7ac/space.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/282c3712cae3b7c845aa4d3517fd9881/error.txt",
                         "https://aws.s13-s1001604.lat/stream/3fb10b8d8fb288ba13970fe302430da2/space.m3u8",
                         "http://45.162.64.114/SPACE/index.m3u8",
                         "http://138.204.86.4:8080/SPACE_HD/index.m3u8"
@@ -806,7 +757,6 @@
         "logo":  "https://img.faz-o-eli.online/tnt.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tnt/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/443247cb582bb68b98af219743720886/error.txt",
                         "http://45.162.64.114/TNT/index.m3u8",
                         "https://16-5-0-235.sslip.io/tnt/index.m3u8",
                         "http://138.204.86.4:8080/TNT_HD/index.m3u8"
@@ -820,7 +770,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tntseries/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/53cae8d46c86aceec5a3928339017e1b/tntseries.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/1345e35faddec370ef5e56302725ff09/error.txt",
                         "https://aws.s13-s1001604.lat/stream/a80e0d116d93c753db030e98deedf0a2/tntseries.m3u8"
                     ]
     },
@@ -832,7 +781,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/universaltv/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/ed870f00aff7cf8192af3737e301669f/universaltv.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/84c0ed0924a3bd004e445b4cddaba492/error.txt",
                         "https://aws.s13-s1001604.lat/stream/64f3c19b505f7bebab5fd8177ced2c1e/universaltv.m3u8",
                         "https://getcdn.clarocdn.com.br/Content/Channel/SPOUNVHD/dsc3/manifest.mpd",
                         "http://45.185.11.126:8000/play/a0af/index.m3u8"
@@ -849,7 +797,6 @@
                         "http://45.162.64.114/DISCOVERY_TURBO/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/509a51408c36ab03ff0b43e6f4d571bc/discoveryturbo.m3u8",
                         "http://138.204.86.4:8080/DISCOVERY_TURBO_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e9c1933aa5ec0104f5049ad873c7e3b6/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/297942.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297943.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297944.m3u8",
@@ -874,7 +821,6 @@
         "logo":  "https://img.faz-o-eli.online/telecinefun.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tcfun/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/a23b86fe9c46af9f8a130cd9f8be73c4/error.txt",
                         "http://45.185.11.126:8000/play/a059/index.m3u8"
                     ]
     },
@@ -885,7 +831,6 @@
         "logo":  "https://img.faz-o-eli.online/telecinecult.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tccult/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/98a387917721f3599ef35b39e88e023d/error.txt",
                         "http://45.185.11.126:8000/play/a05a/index.m3u8"
                     ]
     },
@@ -895,8 +840,7 @@
         "category":  "Filmes e Séries",
         "logo":  "https://img.faz-o-eli.online/telecinetouch.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tctouch/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/8962d63a2e861d7e61c1de5a7c566c88/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tctouch/index.m3u8"
                     ]
     },
     {
@@ -936,7 +880,6 @@
         "category":  "Variedades",
         "logo":  "https://img.faz-o-eli.online/tlc.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/35776ab0b8b9588645a28a07074e0047/error.txt",
                         "http://79.127.238.228:14433",
                         "http://64.31.23.207:80/59471019/60849037/518587.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/518588.m3u8"
@@ -958,8 +901,7 @@
         "category":  "Filmes e Séries",
         "logo":  "https://img.faz-o-eli.online/tntnovelas.png",
         "sources":  [
-                        "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tntnovelas/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/40830396231e8411dc2468b57bc61755/error.txt"
+                        "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tntnovelas/index.m3u8"
                     ]
     },
     {
@@ -970,7 +912,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/discoveryscience/index.m3u8",
                         "http://138.204.86.4:8080/DISCOVERY_SCIENCE_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/4e02655ccd21297a2614fe8ac9eded96/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/297951.m3u8"
                     ]
     },
@@ -981,7 +922,6 @@
         "logo":  "https://img.faz-o-eli.online/axn.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/axn/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/85a1a226d129a6ac402fd4d8fb1de4d5/error.txt",
                         "http://138.204.86.4:8080/AXN_HD/index.m3u8",
                         "http://170.83.16.50/AXN/index.m3u8",
                         "http://170.83.49.66:8083/AXNHD/index.m3u8"
@@ -995,7 +935,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/bandnews/index.m3u8",
                         "http://45.162.64.114/BAND_NEWS/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/af8da97104f7c6e308f954bb77aec989/error.txt",
                         "http://168.197.104.22/BAND_NEWS/index.m3u8"
                     ]
     },
@@ -1010,7 +949,6 @@
                         "https://aws.s13-s1001604.lat/stream/63959f42a8a5be2c41cdcb84fe993800/bandsports.m3u8",
                         "http://45.162.64.114/BAND_SPORTS/index.m3u8",
                         "https://16-5-0-235.sslip.io/bandsports/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e93f99054cd832275c29fcc60d19dc5a/error.txt",
                         "http://170.83.16.50/BAND_SPORTS/index.m3u8",
                         "http://170.83.49.66:8083/BANDSPORTSHD/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460152.m3u8",
@@ -1072,7 +1010,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/espn3/index.m3u8",
                         "http://138.204.86.4:8080/ESPN3_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/037b9929291aff5351c99b46cc43c7b1/error.txt",
                         "https://16-5-0-235.sslip.io/espn3/index.m3u8",
                         "http://181.78.197.59:8000/play/a081/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460190.m3u8"
@@ -1127,7 +1064,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/tvaparecida/index.m3u8",
                         "https://cdn.live.br1.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/7518303441d6a573cdec2185d77bc454/error.txt",
                         "http://45.162.64.114/TV_APARECIDA/index.m3u8",
                         "http://168.197.104.22/TV_APARECIDA/index.m3u8",
                         "https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8"
@@ -1154,7 +1090,6 @@
         "logo":  "https://mondrian.claro.com.br/channels/inverse/investigacao-discovery.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/discoveryid/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/18b4fefcddfce3fd86d84079bfca5ee1/error.txt",
                         "http://45.162.64.114/DISCOVERY_ID/index.m3u8",
                         "http://138.204.86.4:8080/ID_HD/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297950.m3u8"
@@ -1188,7 +1123,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/xsports/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/ab55903cd13c40853a7fead247e75e80/xsports.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/cc50a900326f700c90004d7fa67ae0da/error.txt",
                         "https://aws.s13-s1001604.lat/stream/142daec49214213d83df632a3ae41d10/xsports.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460262.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/3460263.m3u8"
@@ -1223,8 +1157,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/band.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/bandsp/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/a4274812d61347c8fb954bc96987b1d1/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/bandsp/index.m3u8"
                     ]
     },
     {
@@ -1234,7 +1167,6 @@
         "logo":  "https://img.faz-o-eli.online/sbt.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/sbtsp/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/31f7488a7407fcd7de95fb172c73cfca/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/324307.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/324308.m3u8"
                     ]
@@ -1245,8 +1177,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/record.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/recordsp/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/f5637c81046635414287e07834514230/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/recordsp/index.m3u8"
                     ]
     },
     {
@@ -1409,7 +1340,6 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/discoveryhh/index.m3u8",
                         "http://45.162.64.114/DISCOVERY_H_H/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/c5ea0e1dd7d53850848666e4628f9ca6/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/297939.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297940.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297941.m3u8",
@@ -1773,7 +1703,6 @@
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/combate/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/7d57bfa6e9334f879ac96923e91f97f4/combate.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/60436cfbd0a47c5ffcb9074298b97fbc/error.txt",
                         "https://aws.s13-s1001604.lat/stream/a223f90f63881dde78c7f0bb46488689/combate.m3u8",
                         "https://16-5-0-235.sslip.io/combate/index.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/297542.m3u8",
@@ -1833,8 +1762,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/paramountplus.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/paramountplus/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/9b8af4ee6f77a15c5522f11214f4886d/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/paramountplus/index.m3u8"
                     ]
     },
     {
@@ -1872,7 +1800,6 @@
         "logo":  "https://img.faz-o-eli.online/sportynet.png",
         "sources":  [
                         "http://64.31.23.207:80/59471019/60849037/3460158.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/eeda6ca3007aff0d7cd48ebb954fc9a0/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/3460269.m3u8"
                     ]
     },
@@ -1883,7 +1810,6 @@
         "logo":  "https://img.faz-o-eli.online/ufcfightpass.png",
         "sources":  [
                         "http://64.31.23.207:80/59471019/60849037/297545.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/cd01f5e86b826126340a362a9306813a/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/297548.m3u8"
                     ]
     },
@@ -1931,8 +1857,7 @@
         "category":  "Filmes e Séries",
         "logo":  "https://img.faz-o-eli.online/studiouniversal.png",
         "sources":  [
-                        "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/studiouniversal/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/54f538afd897b920e0e9a369498aa8ad/error.txt"
+                        "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/studiouniversal/index.m3u8"
                     ]
     },
     {
@@ -1942,7 +1867,6 @@
         "logo":  "https://img.faz-o-eli.online/gloob.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/gloob/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/9be3c059fe39a2434c8da8c9fd9192ce/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/1882626.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/1882627.m3u8"
                     ]
@@ -1976,7 +1900,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/band.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/f8ba3e219904b6dda823447180552a19/error.txt"
+
                     ]
     },
     {
@@ -2060,7 +1984,6 @@
         "logo":  "https://img.faz-o-eli.online/sbt.png",
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/sbtrj/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/7882e5db32730705d0087a1b27e77325/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/324302.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/324303.m3u8"
                     ]
@@ -2092,7 +2015,6 @@
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/foodnetwork/index.m3u8",
                         "https://aws.s13-s1001604.lat/stream/1cabec2a5257e1af7f711a4c7fd32a1e/foodnetwork.m3u8",
                         "https://aws.s13-s1001604.lat/stream/8975189bb51c75df99a767cdecf542d0/foodnetwork.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/1375e19223d078d2e672f7b625c24599/error.txt",
                         "http://64.31.23.207:80/59471019/60849037/518566.m3u8",
                         "http://64.31.23.207:80/59471019/60849037/518567.m3u8",
                         "http://45.185.11.126:8000/play/a06j/index.m3u8"
@@ -2122,7 +2044,7 @@
         "category":  "24 Horas",
         "logo":  "https://img.faz-o-eli.online/24h.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/43eb03742d381024d2a2ef16f6916f4f/error.txt"
+
                     ]
     },
     {
@@ -2131,7 +2053,6 @@
         "category":  "24 Horas",
         "logo":  "https://img.faz-o-eli.online/24h.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/9b42ec0bc08c422e9a52cdbb101ece56/error.txt",
                         "https://aws.s13-s1001604.lat/stream/52e5b4e936ba314127ebe4742e6ae12f/24h_dragonball.m3u8",
                         "https://aws.s13-s1001604.lat/stream/f7e69dd96cbbf642e6041bc64cb8667e/24h_dragonball.m3u8"
                     ]
@@ -2142,7 +2063,7 @@
         "category":  "24 Horas",
         "logo":  "https://img.faz-o-eli.online/24h.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/6a6c2b39377c8be71e6ebba1c81affa7/error.txt"
+
                     ]
     },
     {
@@ -2151,7 +2072,6 @@
         "category":  "24 Horas",
         "logo":  "https://img.faz-o-eli.online/24h.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/9f768eb31c5b5f3a3603985603a3d719/error.txt",
                         "https://aws.s13-s1001604.lat/stream/2efddc40d3e9b9d781d88441ec82e8ce/24h_simpsons.m3u8",
                         "https://aws.s13-s1001604.lat/stream/a9b54966fcd76b7b3266654910bb96e0/24h_simpsons.m3u8"
                     ]
@@ -2162,7 +2082,7 @@
         "category":  "24 Horas",
         "logo":  "https://img.faz-o-eli.online/24h.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/77b2ad34c18c7712af686437922f527a/error.txt"
+
                     ]
     },
     {
@@ -2171,7 +2091,6 @@
         "category":  "24 Horas",
         "logo":  "https://img.faz-o-eli.online/24h.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/3558eaebcca3c020d1bc6b13c2c15959/error.txt",
                         "https://aws.s13-s1001604.lat/stream/02bde299980d2c1a30e472930d0a76d8/24h_odeiachris.m3u8",
                         "https://aws.s13-s1001604.lat/stream/9c7232930a640d377b286e2bfa30a03e/24h_odeiachris.m3u8"
                     ]
@@ -2182,7 +2101,7 @@
         "category":  "24 Horas",
         "logo":  "https://img.faz-o-eli.online/24h.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/feedfc64930d31b7c295928ec1851752/error.txt"
+
                     ]
     },
     {
@@ -2193,8 +2112,7 @@
         "sources":  [
                         "https://d2-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/discoveryworld/index.m3u8",
                         "http://45.162.64.114/DISCOVERY_WORLD/index.m3u8",
-                        "http://138.204.86.4:8080/DISCOVERY_WORLD_HD/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/36f8ffd3e1aa2cf6e97169cb1b623cfe/error.txt"
+                        "http://138.204.86.4:8080/DISCOVERY_WORLD_HD/index.m3u8"
                     ]
     },
     {
@@ -2203,8 +2121,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/cazetv.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/cazetv/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/b9a79d4d188bd86be3e6d969e280cd78/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/cazetv/index.m3u8"
                     ]
     },
     {
@@ -2213,8 +2130,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/cazetv.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/cazetv2/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/7ef9cf01020fa364781aa8e38d4af940/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/cazetv2/index.m3u8"
                     ]
     },
     {
@@ -2223,7 +2139,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/pt_abola.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/3ba0bc35db81c1f8b59724442910993f/error.txt"
+
                     ]
     },
     {
@@ -2232,7 +2148,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/pt_benficatv.prev.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/bfa8fd3dd2ade6abd3bc91133418c612/error.txt"
+
                     ]
     },
     {
@@ -2241,7 +2157,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/pt_canal11.prev.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/ff80622955b9b0f2d4a6775860d83ce6/error.txt"
+
                     ]
     },
     {
@@ -2250,7 +2166,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/pt_eleven1.prev.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/de68c5b8a6d59f1bc85f6c438ce7a85f/error.txt"
+
                     ]
     },
     {
@@ -2259,7 +2175,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/pt_eleven2.prev.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/f1ecd7f9bf064d3863aec1abad0179ae/error.txt"
+
                     ]
     },
     {
@@ -2268,7 +2184,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/pt_eleven3.prev.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/bcfe06b3b9a2b2dd136e5c92b0f0ff8b/error.txt"
+
                     ]
     },
     {
@@ -2277,7 +2193,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/sportv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/cc50f04fb9837307300cc3c538d2872b/error.txt"
+
                     ]
     },
     {
@@ -2286,7 +2202,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/sportv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/ae5c7faed01f314d963965507018636b/error.txt"
+
                     ]
     },
     {
@@ -2295,7 +2211,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/sportv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e9a4db94394f6579d443a82782e7bdb0/error.txt"
+
                     ]
     },
     {
@@ -2304,7 +2220,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/sportv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/f4ee930116ea1b9c054161423d434d24/error.txt"
+
                     ]
     },
     {
@@ -2313,7 +2229,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/sportv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/6c52be0c745adca997e07395dcb23d8a/error.txt"
+
                     ]
     },
     {
@@ -2322,7 +2238,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/sportv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/ff4418b93a7f2ef3e97c324325b34e87/error.txt"
+
                     ]
     },
     {
@@ -2331,7 +2247,7 @@
         "category":  "Esportes",
         "logo":  "https://img.faz-o-eli.online/sportv.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/1d0ed77ee37e84561d4251e54bfcfc2f/error.txt"
+
                     ]
     },
     {
@@ -2367,7 +2283,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e0c42f84846994d8ee374ea265df6c98/error.txt"
+
                     ]
     },
     {
@@ -2376,7 +2292,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e27370504fe7440203bfe8cc0ba31b34/error.txt"
+
                     ]
     },
     {
@@ -2385,8 +2301,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globoes/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/5342be23da1a2ce346a06934fc957960/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globoes/index.m3u8"
                     ]
     },
     {
@@ -2395,7 +2310,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/1d2ac9f2a038de4693aa0db45cce9d14/error.txt"
+
                     ]
     },
     {
@@ -2404,7 +2319,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/1a1cab60e82332435069fa13ebe9260f/error.txt"
+
                     ]
     },
     {
@@ -2413,7 +2328,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/a4b906639ae5283f4b5d9a53120f748a/error.txt"
+
                     ]
     },
     {
@@ -2423,7 +2338,6 @@
         "logo":  "https://img.faz-o-eli.online/globorj.png",
         "sources":  [
                         "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globorj/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/0ed66dcb092f7cb03fe246769056cd65/error.txt",
                         "https://16-5-0-235.sslip.io/globorj/index.m3u8"
                     ]
     },
@@ -2433,8 +2347,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globors/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/2f37f4c9fd2a14541ae97c6677ff037f/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globors/index.m3u8"
                     ]
     },
     {
@@ -2443,7 +2356,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/record.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/2aceea5116ee3e1f5899f07bf65e06a9/error.txt"
+
                     ]
     },
     {
@@ -2452,8 +2365,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/record.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/recordmg/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/3b1102e58d05b5a87f6e4346829c131b/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/recordmg/index.m3u8"
                     ]
     },
     {
@@ -2462,8 +2374,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/record.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/recordrj/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/927447931e4acd5abfdfed8fae5e5110/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/recordrj/index.m3u8"
                     ]
     },
     {
@@ -2473,8 +2384,7 @@
         "logo":  "https://img.faz-o-eli.online/hgtv.png",
         "sources":  [
                         "https://aws.s13-s1001604.lat/stream/83388f6af00a1e30e6a19d56af52fd76/hgtv.m3u8",
-                        "https://aws.s13-s1001604.lat/stream/0b7ed4f2d49df88f285464007159254d/hgtv.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/412f495ccea77897b7dd724b02938518/error.txt"
+                        "https://aws.s13-s1001604.lat/stream/0b7ed4f2d49df88f285464007159254d/hgtv.m3u8"
                     ]
     },
     {
@@ -2494,7 +2404,6 @@
         "logo":  "https://img.faz-o-eli.online/afazenda2.png",
         "sources":  [
                         "https://aws.s13-s1001604.lat/stream/820fef4ff510e9724f894c3b408b9a93/afazenda.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/00e6c3f1f877190c7acd00ddcaaf472a/error.txt",
                         "https://aws.s13-s1001604.lat/stream/6bcf28b4f7d5fbb81239a41192761927/afazenda.m3u8"
                     ]
     },
@@ -2504,7 +2413,7 @@
         "category":  "PPV",
         "logo":  "https://img.faz-o-eli.online/afazenda2.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/094abfa0ecfc08782389747ce1eb8469/error.txt"
+
                     ]
     },
     {
@@ -2513,7 +2422,7 @@
         "category":  "PPV",
         "logo":  "https://img.faz-o-eli.online/afazenda2.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/e0b79274325d0ccea3df474327ecc587/error.txt"
+
                     ]
     },
     {
@@ -2531,7 +2440,7 @@
         "category":  "PPV",
         "logo":  "https://img.faz-o-eli.online/afazenda2.png",
         "sources":  [
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/c57380111d7abf826084074271b4dc52/error.txt"
+
                     ]
     },
     {
@@ -2549,8 +2458,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globodf/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/0fb4a21b7eb7d1859b9d525279ad6e08/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globodf/index.m3u8"
                     ]
     },
     {
@@ -2559,8 +2467,7 @@
         "category":  "TV Aberta",
         "logo":  "https://img.faz-o-eli.online/globosp.png",
         "sources":  [
-                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globomg/index.m3u8",
-                        "https://92ef03b0a53c20499bcde22fe03440c5.s25-cloudfront-net.lat/stream/9915ea1e8ec79157cbd1b298cc1af1d3/error.txt"
+                        "https://d1-ywppjexvlyulasvmgzjdftfjikth2210oq80soveui6lkbi2iza2zf.cdn13embed.xyz/globomg/index.m3u8"
                     ]
     },
     {

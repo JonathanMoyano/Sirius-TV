@@ -110,7 +110,49 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // Combined data
   const allMedia = [...doramasData, ...moviesData, ...seriesData];
-  const allChannels = channelsData;
+  const [allChannels, setAllChannels] = useState<Channel[]>(channelsData);
+
+  useEffect(() => {
+    fetch('/data/catalogo.json')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          const mapped: Channel[] = data.map((c: any) => {
+            // Check if there is an existing enriched channel in channelsData
+            const existing = channelsData.find((ch) => ch.id === c.id || ch.name.toLowerCase() === c.name.toLowerCase());
+            return {
+              id: c.id,
+              name: c.name,
+              slug: c.id,
+              category: c.category || 'Variedades',
+              logoUrl: c.logo || existing?.logoUrl || 'https://via.placeholder.com/100x100?text=' + encodeURIComponent(c.name),
+              currentShow: existing?.currentShow || {
+                title: 'Transmissão Ao Vivo HD',
+                description: 'Assista a programação em tempo real no Sirius TV',
+                startTime: '13:00',
+                endTime: '15:00',
+                progressPercent: 45,
+              },
+              nextShow: existing?.nextShow || {
+                title: 'Programação a Seguir',
+                startTime: '15:00',
+              },
+              sources: (c.sources && c.sources.length > 0)
+                ? c.sources.map((src: string, idx: number) => ({
+                    name: `Servidor ${idx + 1}`,
+                    url: src,
+                    type: 'hls' as const,
+                  }))
+                : existing?.sources || [],
+            };
+          });
+          setAllChannels(mapped);
+        }
+      })
+      .catch((err) => {
+        console.warn('Carregamento de canais:', err);
+      });
+  }, []);
 
   // Shortcut for search Ctrl+K or /
   useEffect(() => {

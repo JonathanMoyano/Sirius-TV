@@ -104,3 +104,4 @@ export const ChannelCard: React.FC<ChannelCardProps> = ({ channel }) => {
     </div>
   );
 };
+

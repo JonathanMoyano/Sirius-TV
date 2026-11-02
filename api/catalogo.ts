@@ -36,3 +36,4 @@ export default function handler(
     res.end(JSON.stringify({ error: 'Erro ao carregar catálogo', details: err?.message }));
   }
 }
+

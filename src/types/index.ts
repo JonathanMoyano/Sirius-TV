@@ -42,12 +42,21 @@ export interface MediaItem {
   tags?: string[];
 }
 
+export interface ChannelScheduleItem {
+  time: string;
+  title: string;
+  description?: string;
+  isCurrent?: boolean;
+}
+
 export interface Channel {
   id: string;
   name: string;
   slug: string;
-  category: 'TV Aberta' | 'Esportes' | 'Filmes e Séries' | 'Notícias' | 'Infantil' | 'Documentários' | 'Variedades';
+  category: string;
   logoUrl: string;
+  thumbUrl?: string;
+  schedule?: ChannelScheduleItem[];
   currentShow: {
     title: string;
     description: string;

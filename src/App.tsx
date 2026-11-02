@@ -4,28 +4,22 @@ import { Navbar } from './components/Navbar';
 import { HeroBanner } from './components/HeroBanner';
 import { MediaCard } from './components/MediaCard';
 import { ChannelCard } from './components/ChannelCard';
-import { MatchCard } from './components/MatchCard';
 import { VideoPlayerModal } from './components/VideoPlayerModal';
 import { DetailModal } from './components/DetailModal';
 import { SearchModal } from './components/SearchModal';
 import { EPGGuide } from './components/EPGGuide';
 import { Footer } from './components/Footer';
-import { UniTvLiveView } from './components/UniTvLiveView';
+import { LiveChannelsPage } from './components/LiveChannelsPage';
 import { moviesData } from './data/movies';
 import { seriesData } from './data/series';
 import { doramasData } from './data/doramas';
-import { channelsData } from './data/channels';
-import { matchesData } from './data/matches';
 import {
   Radio,
   Film,
   Sparkles,
   Clapperboard,
-  Trophy,
   Heart,
   ChevronRight,
-  Filter,
-  Tv,
 } from 'lucide-react';
 import { useDpadNavigation } from './hooks/useDpadNavigation';
 
@@ -34,7 +28,6 @@ export const AppContent: React.FC = () => {
   const { currentTab, setCurrentTab, favorites, allMedia, allChannels } = useApp();
 
   // Local filter states for individual tabs
-  const [selectedChannelCategory, setSelectedChannelCategory] = useState<string>('Todos');
   const [selectedMovieGenre, setSelectedMovieGenre] = useState<string>('Todos');
   const [selectedSeriesGenre, setSelectedSeriesGenre] = useState<string>('Todos');
   const [selectedDoramaCountry, setSelectedDoramaCountry] = useState<string>('Todos');
@@ -69,7 +62,7 @@ export const AppContent: React.FC = () => {
             <HeroBanner items={featuredItems} />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-              {/* Quick Navigation Cards */}
+              {/* Quick Navigation Cards: Only TV Ao Vivo, Doramas, Filmes, Séries */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 -mt-6 sm:-mt-10 relative z-20">
                 {[
                   {
@@ -94,11 +87,11 @@ export const AppContent: React.FC = () => {
                     gradient: 'from-cyan-500/10 to-blue-500/10 border-cyan-500/30',
                   },
                   {
-                    id: 'matches' as NavTab,
-                    title: 'Jogos de Hoje',
-                    subtitle: 'Futebol Ao Vivo & Rodada',
-                    icon: <Trophy className="w-5 h-5 text-emerald-400" />,
-                    gradient: 'from-emerald-500/10 to-teal-500/10 border-emerald-500/30',
+                    id: 'series' as NavTab,
+                    title: 'Séries',
+                    subtitle: 'Temporadas Completas',
+                    icon: <Clapperboard className="w-5 h-5 text-indigo-400" />,
+                    gradient: 'from-indigo-500/10 to-blue-500/10 border-indigo-500/30',
                   },
                 ].map((cat) => (
                   <div
@@ -153,40 +146,7 @@ export const AppContent: React.FC = () => {
                 </div>
               </section>
 
-              {/* SECTION: JOGOS DE HOJE */}
-              <section className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <span className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                      <Trophy className="w-5 h-5" />
-                    </span>
-                    <div>
-                      <h2 className="text-xl sm:text-2xl font-black text-white">
-                        Jogos e Futebol de Hoje
-                      </h2>
-                      <p className="text-xs text-slate-400">
-                        Partidas ao vivo no Brasileirão, Champions League e Libertadores
-                      </p>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => setCurrentTab('matches')}
-                    className="text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group"
-                  >
-                    <span>Ver grade de jogos</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {matchesData.map((match) => (
-                    <MatchCard key={match.id} match={match} />
-                  ))}
-                </div>
-              </section>
-
-              {/* SECTION: DORAMAS (K-DRAMAS & C-DRAMAS) - SPECIAL HIGHLIGHT */}
+              {/* SECTION: DORAMAS (K-DRAMAS & C-DRAMAS) */}
               <section className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -297,15 +257,15 @@ export const AppContent: React.FC = () => {
         )}
 
         {/* =========================================
-            TAB 2: CANAIS DE TV AO VIVO (MODO UNITV)
+            TAB 2: CANAIS DE TV AO VIVO (Página Completa Estilo Saimo + Modo UniTV)
         ========================================= */}
-        {currentTab === 'channels' && <UniTvLiveView />}
+        {currentTab === 'channels' && <LiveChannelsPage />}
 
         {/* =========================================
             TAB 3: FILMES
         ========================================= */}
         {((currentTab as any) === 'filmes' || currentTab === 'movies') && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
               <div>
                 <div className="flex items-center gap-2">
@@ -357,7 +317,7 @@ export const AppContent: React.FC = () => {
             TAB 4: SÉRIES
         ========================================= */}
         {currentTab === 'series' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
               <div>
                 <div className="flex items-center gap-2">
@@ -409,7 +369,7 @@ export const AppContent: React.FC = () => {
             TAB 5: DORAMAS (K-DRAMA, C-DRAMA, J-DRAMA)
         ========================================= */}
         {currentTab === 'doramas' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
               <div>
                 <div className="flex items-center gap-2.5">
@@ -479,82 +439,30 @@ export const AppContent: React.FC = () => {
         )}
 
         {/* =========================================
-            TAB 6: JOGOS DE HOJE
-        ========================================= */}
-        {currentTab === 'matches' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8">
-            <div className="border-b border-slate-800 pb-6">
-              <div className="flex items-center gap-2">
-                <Trophy className="w-6 h-6 text-emerald-400" />
-                <h1 className="text-2xl sm:text-3xl font-black text-white">
-                  Jogos de Hoje & Transmissões Esportivas
-                </h1>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Acompanhe os horários das partidas e assista ao vivo no canal correspondente.
-              </p>
-            </div>
-
-            {/* Matches List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {matchesData.map((match) => (
-                <MatchCard key={match.id} match={match} />
-              ))}
-            </div>
-
-            {/* Sports Channels section */}
-            <div className="pt-8 space-y-4">
-              <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                <Radio className="w-5 h-5 text-rose-500" />
-                <span>Canais de Esportes Ao Vivo</span>
-              </h2>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {allChannels
-                  .filter((c) => c.category === 'Esportes')
-                  .map((channel) => (
-                    <ChannelCard key={channel.id} channel={channel} />
-                  ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* =========================================
-            TAB 7: MINHA LISTA (FAVORITOS)
+            TAB 6: MINHA LISTA (FAVORITOS)
         ========================================= */}
         {currentTab === 'favorites' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-10 animate-fadeIn">
             <div className="border-b border-slate-800 pb-6">
               <div className="flex items-center gap-2">
-                <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
-                <h1 className="text-2xl sm:text-3xl font-black text-white">
-                  Minha Lista de Favoritos
-                </h1>
+                <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
+                <h1 className="text-2xl sm:text-3xl font-black text-white">Minha Lista</h1>
               </div>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Seus filmes, séries, doramas e canais favoritos reunidos em um só lugar.
+                Seus canais, filmes, séries e doramas favoritos salvos para acesso rápido.
               </p>
             </div>
 
             {favoriteChannels.length === 0 && favoriteMedia.length === 0 ? (
-              <div className="py-20 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 text-slate-500 flex items-center justify-center mx-auto">
-                  <Heart className="w-8 h-8" />
-                </div>
-                <h3 className="text-lg font-bold text-white">Sua lista está vazia</h3>
-                <p className="text-sm text-slate-400 max-w-sm mx-auto">
-                  Explore os títulos e clique no botão de coração ou "+" para salvar seus conteúdos favoritos.
+              <div className="text-center py-20 bg-slate-900/30 rounded-3xl border border-dashed border-slate-800">
+                <Heart className="w-12 h-12 text-slate-700 mx-auto mb-3" />
+                <h3 className="text-base font-bold text-white">Sua lista está vazia</h3>
+                <p className="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
+                  Clique no ícone de estrela nos canais ou no botão de favoritos dos filmes e doramas para salvá-los aqui.
                 </p>
-                <button
-                  onClick={() => setCurrentTab('home')}
-                  className="px-6 py-2.5 rounded-xl bg-cyan-400 text-slate-950 font-bold text-sm hover:bg-cyan-300 transition-colors"
-                >
-                  Explorar Conteúdos
-                </button>
               </div>
             ) : (
-              <div className="space-y-10">
+              <div className="space-y-12">
                 {favoriteChannels.length > 0 && (
                   <div className="space-y-4">
                     <h2 className="text-lg font-bold text-white flex items-center gap-2">
@@ -562,8 +470,8 @@ export const AppContent: React.FC = () => {
                       <span>Canais Favoritos ({favoriteChannels.length})</span>
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                      {favoriteChannels.map((c) => (
-                        <ChannelCard key={c.id} channel={c} />
+                      {favoriteChannels.map((channel) => (
+                        <ChannelCard key={channel.id} channel={channel} />
                       ))}
                     </div>
                   </div>
@@ -572,12 +480,12 @@ export const AppContent: React.FC = () => {
                 {favoriteMedia.length > 0 && (
                   <div className="space-y-4">
                     <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-cyan-400" />
+                      <Film className="w-4 h-4 text-cyan-400" />
                       <span>Filmes, Séries & Doramas ({favoriteMedia.length})</span>
                     </h2>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                      {favoriteMedia.map((m) => (
-                        <MediaCard key={m.id} item={m} />
+                      {favoriteMedia.map((item) => (
+                        <MediaCard key={item.id} item={item} />
                       ))}
                     </div>
                   </div>
@@ -593,8 +501,8 @@ export const AppContent: React.FC = () => {
       <DetailModal />
       <SearchModal />
 
-      {/* Footer (hidden in UniTV live mode) */}
-      {currentTab !== 'channels' && <Footer />}
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

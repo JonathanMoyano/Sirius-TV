@@ -9,9 +9,7 @@ import {
   Menu,
   X,
   Radio,
-  Flame,
   Clapperboard,
-  Trophy,
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -28,12 +26,10 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navItems: { id: NavTab; label: string; icon: React.ReactNode; badge?: string }[] = [
-    { id: 'home', label: 'Início', icon: <Flame className="w-4 h-4" /> },
     { id: 'channels', label: 'TV Ao Vivo', icon: <Radio className="w-4 h-4 text-rose-500 animate-pulse" />, badge: 'AO VIVO' },
-    { id: 'filmes' as any, label: 'Filmes', icon: <Film className="w-4 h-4" /> },
-    { id: 'series', label: 'Séries', icon: <Clapperboard className="w-4 h-4" /> },
+    { id: 'filmes' as any, label: 'Filmes', icon: <Film className="w-4 h-4 text-cyan-400" /> },
+    { id: 'series', label: 'Séries', icon: <Clapperboard className="w-4 h-4 text-indigo-400" /> },
     { id: 'doramas', label: 'Doramas', icon: <Sparkles className="w-4 h-4 text-amber-400" />, badge: 'TOP' },
-    { id: 'matches', label: 'Jogos de Hoje', icon: <Trophy className="w-4 h-4 text-emerald-400" /> },
     {
       id: 'favorites',
       label: 'Minha Lista',
@@ -52,14 +48,14 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#070913]/90 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-3'
-          : 'bg-gradient-to-b from-[#070913]/95 via-[#070913]/60 to-transparent py-4'
+          ? 'bg-[#070913]/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-3'
+          : 'bg-gradient-to-b from-[#070913] via-[#070913]/80 to-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <div
-          onClick={() => handleNavClick('home')}
+          onClick={() => handleNavClick('channels')}
           className="flex items-center gap-2.5 cursor-pointer group select-none"
         >
           <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-purple-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
@@ -89,9 +85,9 @@ export const Navbar: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2 group ${
+                className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 group ${
                   active
-                    ? 'text-white bg-slate-800/80 shadow-inner shadow-cyan-500/10 border border-slate-700/60'
+                    ? 'text-white bg-slate-800/90 shadow-inner shadow-cyan-500/10 border border-slate-700/80'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
                 }`}
               >
@@ -152,7 +148,7 @@ export const Navbar: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                   active
                     ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-white border border-cyan-500/30'
                     : 'text-slate-300 hover:bg-slate-800/60'
@@ -183,4 +179,3 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
-

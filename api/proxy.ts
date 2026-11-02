@@ -146,3 +146,4 @@ export default async function handler(
     res.end(JSON.stringify({ error: 'Erro no proxy de vídeo', details: err?.message || String(err) }));
   }
 }
+

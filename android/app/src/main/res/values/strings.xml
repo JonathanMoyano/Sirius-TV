@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sirius TV</string>
+    <string name="title_activity_main">Sirius TV</string>
+    <string name="package_name">tv.sirius.app</string>
+    <string name="custom_url_scheme">tv.sirius.app</string>
+</resources>

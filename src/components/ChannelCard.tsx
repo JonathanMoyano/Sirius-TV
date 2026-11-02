@@ -18,8 +18,14 @@ export const ChannelCard: React.FC<ChannelCardProps> = ({ channel }) => {
 
   return (
     <div
+      tabIndex={0}
       onClick={() => openPlayer(channel)}
-      className="group relative flex flex-col justify-between p-4 rounded-2xl bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-slate-950/80 border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 cursor-pointer select-none"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          openPlayer(channel);
+        }
+      }}
+      className="group relative flex flex-col justify-between p-4 rounded-2xl bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-slate-950/80 border border-slate-800/80 hover:border-cyan-500/50 focus:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 cursor-pointer select-none"
     >
       {/* Top Header: Channel Logo + Live Badge + Favorite */}
       <div className="flex items-start justify-between gap-3">

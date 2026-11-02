@@ -26,8 +26,10 @@ import {
   Filter,
   Tv,
 } from 'lucide-react';
+import { useDpadNavigation } from './hooks/useDpadNavigation';
 
 export const AppContent: React.FC = () => {
+  useDpadNavigation();
   const { currentTab, setCurrentTab, favorites, allMedia, allChannels } = useApp();
 
   // Local filter states for individual tabs

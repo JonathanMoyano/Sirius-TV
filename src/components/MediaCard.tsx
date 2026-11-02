@@ -28,8 +28,14 @@ export const MediaCard: React.FC<MediaCardProps> = ({ item }) => {
 
   return (
     <div
+      tabIndex={0}
       onClick={() => openDetail(item)}
-      className="group relative flex flex-col rounded-2xl overflow-hidden bg-slate-900/40 border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 cursor-pointer select-none"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          openDetail(item);
+        }
+      }}
+      className="group relative flex flex-col rounded-2xl overflow-hidden bg-slate-900/40 border border-slate-800/80 hover:border-cyan-500/50 focus:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 cursor-pointer select-none"
     >
       {/* Poster Container */}
       <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-800">

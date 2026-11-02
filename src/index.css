@@ -48,3 +48,15 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* TV & Remote Control (D-Pad) Focus Styles */
+.tv-remote-mode button:focus-visible,
+.tv-remote-mode [tabindex="0"]:focus-visible,
+.tv-remote-mode a:focus-visible {
+  outline: 3px solid #38bdf8 !important;
+  outline-offset: 4px !important;
+  transform: scale(1.04) !important;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6) !important;
+  transition: all 0.15s ease-out !important;
+  z-index: 30 !important;
+}
